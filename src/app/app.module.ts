@@ -40,7 +40,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 const routes: Routes = [
-  {path: '', component: LoginComponent, canActivate: [IsLoggedInGuard]},
+  {path: '',redirectTo: '/login', pathMatch: 'full'},
   {path: 'todos', component: TodosComponent, canActivate: [AuthGuard]},
   {path: 'add-todo', component: AddTodoComponent, canActivate: [AuthGuard]},
   {path: 'todo/:id', component: TodoComponent, resolve:{
