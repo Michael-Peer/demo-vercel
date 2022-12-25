@@ -33,6 +33,7 @@ import { AuthGuard } from './shared/routing/guards/AuthGuard';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { IsLoggedInGuard } from './shared/routing/guards/isLoggedinGuard';
 import { MatDialogModule } from '@angular/material/dialog';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 
@@ -85,7 +86,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
     // AppRoutingModule
   ],
-  providers: [TodosService, TodoResolver, AuthService, StorageService],
+  providers: [TodosService, TodoResolver, AuthService, StorageService,{
+    provide: APP_BASE_HREF, useValue: '/okoora-vercel'
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
