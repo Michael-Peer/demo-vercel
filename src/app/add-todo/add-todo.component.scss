@@ -1,0 +1,34 @@
+input {
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 400px;
+  margin-bottom: 2px;
+
+  &:focus {
+    border-color: #555;
+  }
+}
+
+.ng-invalid.ng-touched  {
+  border-color: red;
+
+}
+
+.ng-valid.ng-touched  {
+  border-color: green;
+}
+
+form {
+
+  & > * {
+    margin-right: 10px;
+
+  }
+
+}
+
+
+mat-card-content {
+  padding: 0;
+}

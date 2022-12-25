@@ -1,0 +1,13 @@
+
+<div class="filters">
+<mat-form-field appearance="fill">
+  <mat-label>Number of todos per page</mat-label>
+  <mat-select [value]="100" (selectionChange)="emitOnChangeSelect($event)">
+    <mat-option *ngFor="let num of numOfTodos" [value]="num">
+      {{num}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-checkbox (change)="emitOnHideCompleted($event)" class="example-margin">Hide completed tasks</mat-checkbox>
+</div>

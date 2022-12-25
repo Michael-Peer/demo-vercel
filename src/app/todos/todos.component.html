@@ -1,0 +1,25 @@
+
+<div class="actions-container">
+  <app-filters (onChangeSelect)="onChangeSelect($event)" (onHideCompleted)="onHideCompleted($event)"></app-filters>
+  <h1>Hello {{userName}}</h1>
+  <app-add-todo (newTodo)="onNewTodoAdded($event)"></app-add-todo>
+</div>
+
+
+
+<!-- <ul>
+  <div ( *ngFor="let todo of filteredList || todos" >{{todo.title}} {{todo.completed ? '!@@!@!!@!@!@done' : ''}}</div>
+</ul> -->
+
+<mat-grid-list cols="3" rowHeight="200px">
+  <mat-grid-tile *ngFor="let todo of todos">
+    <mat-card [ngClass]="{'todo-card': true, 'completed': todo.completed, 'incomplete': !todo.completed}"  mat-elevation-z2>
+      <mat-card-title>Todo #{{ todo.id }}</mat-card-title>
+      <mat-card-content>      {{ todo.title }}      </mat-card-content>
+      <mat-card-footer>
+        <mat-checkbox (change)="onCompetedChanged(todo)">Mark as completed</mat-checkbox>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
