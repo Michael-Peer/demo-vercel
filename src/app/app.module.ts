@@ -33,7 +33,6 @@ import { AuthGuard } from './shared/routing/guards/AuthGuard';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { IsLoggedInGuard } from './shared/routing/guards/isLoggedinGuard';
 import { MatDialogModule } from '@angular/material/dialog';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -86,9 +85,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
     // AppRoutingModule
   ],
-  providers: [TodosService, TodoResolver, AuthService, StorageService, {
-    provide: LocationStrategy, useClass: HashLocationStrategy
-  }],
+  providers: [TodosService, TodoResolver, AuthService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
