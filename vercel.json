@@ -1,0 +1,7 @@
+{
+  "versin": 2,
+  "routes": [
+    {"handler": "filesystem"}
+  ,{"src": "/.*", "dest": "/index.html"}
+  ]
+}
